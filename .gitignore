@@ -1,0 +1,15 @@
+node_modules/
+**/node_modules/
+
+# Reverse-engineering evidence must remain local.
+*.apk
+*.pcap
+*.pcapng
+btsnoop_hci.log
+
+packages/*/dist
+**/dist
+skills-lock.json
+.agents
+packages/coverage
+**/.DS_Store

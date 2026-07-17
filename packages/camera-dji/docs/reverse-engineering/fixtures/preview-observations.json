@@ -1,0 +1,12 @@
+{
+  "codec": "H.264 Annex-B",
+  "nominalFps": 30,
+  "measurements": [
+    { "cameraMode": "4K60", "recording": false, "observedFps": 28.91 },
+    { "cameraMode": "1080p240 Slow Motion", "recording": false, "observedFps": 28.95 },
+    { "cameraMode": "4K60", "recording": true, "observedFps": 28.96 },
+    { "cameraMode": "1080p240 Slow Motion", "recording": true, "observedFps": 28.91 }
+  ],
+  "recordTransitionInterruptionSeconds": 0.8,
+  "conclusion": "Preview remains nominally 30 fps regardless of 60/120/240 fps recording. Use it for live detection/context; analyze the downloaded original for high-speed projectile motion."
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@mandltv/camera-react-native-e2e",
+  "private": true,
+  "scripts": {
+    "start": "node ./node_modules/react-native/cli.js start --entry-file index.tsx",
+    "android": "node ./node_modules/react-native/cli.js run-android",
+    "ios": "node ./node_modules/react-native/cli.js run-ios"
+  },
+  "dependencies": {
+    "@mandltv/camera-core": "workspace:*",
+    "@mandltv/camera-dji": "workspace:*",
+    "@mandltv/camera-gopro": "workspace:*",
+    "@mandltv/camera-react-native": "workspace:*",
+    "react": "19.2.6",
+    "react-native": "0.86.0",
+    "react-native-ble-plx": "^3.5.1",
+    "react-native-safe-area-context": "^5.8.1"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-android": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/metro-config": "0.84.0",
+    "@types/react": "^19.2.18"
+  }
+}

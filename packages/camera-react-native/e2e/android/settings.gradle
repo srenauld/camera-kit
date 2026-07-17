@@ -1,0 +1,18 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    includeBuild("../../node_modules/@react-native/gradle-plugin")
+}
+
+plugins { id("com.facebook.react.settings") }
+
+def reactNativeCli = file("../node_modules/@react-native-community/cli/build/bin.js").absolutePath
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    ex.autolinkLibrariesFromCommand(["node", reactNativeCli, "config"], file(".."))
+}
+rootProject.name = "camera-react-native-e2e"
+include(":app")
+includeBuild("../../node_modules/@react-native/gradle-plugin")

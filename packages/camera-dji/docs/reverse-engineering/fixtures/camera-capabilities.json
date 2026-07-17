@@ -1,0 +1,52 @@
+{
+  "camera": "DJI Osmo Nano",
+  "resolutionEnums": {
+    "1080p-16:9": 10,
+    "1080p-4:3": 12,
+    "2.7K-16:9": 45,
+    "2.7K-4:3": 95,
+    "4K-16:9": 16,
+    "4K-4:3": 103
+  },
+  "fpsEnums": {
+    "24": 1,
+    "25": 2,
+    "30": 3,
+    "48": 4,
+    "50": 5,
+    "60": 6,
+    "120": 7,
+    "240": 8
+  },
+  "normalVideo": [
+    { "resolution": "1080p", "aspectRatio": "16:9", "width": 1920, "height": 1080, "fps": [24, 25, 30, 48, 50, 60], "resolutionEnum": 10 },
+    { "resolution": "1080p", "aspectRatio": "4:3", "width": 1920, "height": 1440, "fps": [24, 25, 30, 48, 50, 60], "resolutionEnum": 12 },
+    { "resolution": "2.7K", "aspectRatio": "16:9", "width": 2688, "height": 1512, "fps": [24, 25, 30, 48, 50, 60], "resolutionEnum": 45 },
+    { "resolution": "2.7K", "aspectRatio": "4:3", "width": 2688, "height": 2016, "fps": [24, 25, 30, 48, 50, 60], "resolutionEnum": 95 },
+    { "resolution": "4K", "aspectRatio": "16:9", "width": 3840, "height": 2160, "fps": [24, 25, 30, 48, 50, 60], "resolutionEnum": 16 },
+    { "resolution": "4K", "aspectRatio": "4:3", "width": 3840, "height": 2880, "fps": [24, 25, 30, 48, 50], "resolutionEnum": 103 }
+  ],
+  "slowMotion": [
+    { "resolution": "1080p", "aspectRatio": "16:9", "width": 1920, "height": 1080, "captureFps": 120, "slowFactor": 4, "payloadHex": "0a07000400" },
+    { "resolution": "1080p", "aspectRatio": "16:9", "width": 1920, "height": 1080, "captureFps": 240, "slowFactor": 8, "payloadHex": "0a08000800" },
+    { "resolution": "2.7K", "aspectRatio": "16:9", "width": 2688, "height": 1512, "captureFps": 120, "slowFactor": 4, "payloadHex": "2d07000400" },
+    { "resolution": "4K", "aspectRatio": "16:9", "width": 3840, "height": 2160, "captureFps": 120, "slowFactor": 4, "payloadHex": "1007000400" }
+  ],
+  "stabilizationEnums": {
+    "off": 0,
+    "RockSteady": 1,
+    "HorizonBalancing": 4,
+    "HorizonCorrection": 7
+  },
+  "colorEnums": {
+    "Normal 8-bit": 0,
+    "D-Log M 10-bit": 61,
+    "Normal 10-bit": 63
+  },
+  "notes": {
+    "formatPayload": "02/18 payload is [resolutionEnum, fpsEnum, 00, slowFactor, 00]",
+    "modeCommand": "02/e1: 01 normal Video, 00 Slow Motion",
+    "lens": "No independent multi-lens mapping was found; expose FOV/lens as an optional capability.",
+    "evidence": "Normal matrix matches Mimo capability/UI and DJI specifications. All slow-motion rows were selectable; 1080p240 recording and 4K60 stabilization Off were physically exercised. The isolated 4K60 02/18 write was inferred from the contiguous enum and advertised/UI capability because the direct tap capture missed."
+  }
+}
