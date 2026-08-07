@@ -29,8 +29,12 @@ jobs:
         with:
           node-version: 24
 
-      - name: Install Yarn
-        run: npm install --global yarn@4.15.0
+      - name: Activate project Yarn version
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack install --global yarn@4.15.0
+          yarn --version
 
       - name: Install dependencies
         run: yarn install --immutable
