@@ -1,4 +1,7 @@
-import type { CameraCapabilities, VideoCapability } from "@mandltv/camera-core";
+import type {
+  CameraCapabilities,
+  VideoCapability,
+} from "@srenauld/camera-core";
 
 export enum DjiFrameRate {
   FPS24 = 24,

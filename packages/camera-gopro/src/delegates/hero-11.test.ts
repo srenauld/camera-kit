@@ -1,4 +1,4 @@
-import { BleAdvertisementPacket, type BleDevice } from "@mandltv/camera-core";
+import { BleAdvertisementPacket, type BleDevice } from "@srenauld/camera-core";
 import { GoproCommChannels, GoproHero11Handle } from "../handle";
 import { Hero11Delegate } from "./hero-11";
 import type { GoProHero11Mode } from "./types";

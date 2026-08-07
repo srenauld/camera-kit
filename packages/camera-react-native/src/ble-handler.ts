@@ -7,7 +7,7 @@ import {
   type BleScanOptions,
   canonicalBleUuid,
   type ConnectionOptions,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 import { type BleManager, type Device } from "react-native-ble-plx";
 
 import { base64ToBytes } from "./base64";

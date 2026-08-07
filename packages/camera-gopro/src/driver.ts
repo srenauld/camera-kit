@@ -3,7 +3,7 @@ import type {
   BleAdvertisementPacket,
   BleDevice,
   CameraDriver,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
 import { GoproHero11Handle, type GoproHero11Options } from "./handle";
 

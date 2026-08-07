@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-test:
+    name: Lint and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Activate project Yarn version
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack install --global yarn@4.15.0
+          yarn --version
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build all packages
+        run: yarn workspaces foreach -A run build
+
+      - name: Lint all workspaces
+        run: yarn workspaces foreach -A run lint
+
+      - name: Run all tests
+        run: yarn test:all

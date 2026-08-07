@@ -8,7 +8,7 @@ import {
   type BleScanOptions,
   canonicalBleUuid,
   type ConnectionOptions,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
 import { NobleDevice } from "./device";
 

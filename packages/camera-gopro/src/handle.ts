@@ -10,9 +10,9 @@ import type {
   CameraHandle,
   MonotonicClock,
   RecordingStart,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
-import { CameraDisconnectedError } from "@mandltv/camera-core";
+import { CameraDisconnectedError } from "@srenauld/camera-core";
 
 import { BleCommandChannel } from "./command-channel";
 import { CheckStatus } from "./commands/check-status";

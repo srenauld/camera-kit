@@ -1,4 +1,4 @@
-import type { BleCharacteristic } from "@mandltv/camera-core";
+import type { BleCharacteristic } from "@srenauld/camera-core";
 import type { Characteristic, Subscription } from "react-native-ble-plx";
 
 import { base64ToBytes, bytesToBase64 } from "./base64";

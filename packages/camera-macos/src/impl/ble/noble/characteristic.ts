@@ -1,4 +1,4 @@
-import type { BleCharacteristic } from "@mandltv/camera-core";
+import type { BleCharacteristic } from "@srenauld/camera-core";
 
 import { Characteristic } from "@abandonware/noble";
 

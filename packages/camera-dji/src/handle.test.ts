@@ -3,7 +3,7 @@ import {
   BleAdvertisementPacket,
   type BleCharacteristic,
   type BleDevice,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
 import { DJI_OSMO_NANO_CAPABILITIES } from "./capabilities";
 import { DjiOsmoNanoHandle, type DjiOsmoNanoOptions } from "./handle";

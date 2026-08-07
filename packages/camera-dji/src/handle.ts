@@ -12,9 +12,9 @@ import type {
   CameraHandle,
   MonotonicClock,
   RecordingStart,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
-import { CameraDisconnectedError } from "@mandltv/camera-core";
+import { CameraDisconnectedError } from "@srenauld/camera-core";
 
 import { DJI_OSMO_NANO_CAPABILITIES, isSupportedMode } from "./capabilities";
 import {
