@@ -6,13 +6,9 @@ platform transport does not decide which cameras an application supports.
 
 ```ts
 const manager = new BleManager();
-const clock = { now: () => performance.now() };
 const discovery = createBleCameraDiscovery({
   ble: new ReactNativeBleHandler(manager),
-  drivers: [
-    createDjiOsmoNanoDriver({ clock }),
-    createGoproHero11Driver({ clock }),
-  ] as const,
+  drivers: [createDjiOsmoNanoDriver(), createGoproHero11Driver()] as const,
 });
 const kit = createCameraKit(discovery);
 
@@ -33,17 +29,13 @@ manager.destroy();
 
 ## Lifecycle ownership
 
-- `BleManager` belongs to the application. Neither the handler nor CameraKit
-  destroys it.
+- `BleManager` belongs to the application. Neither the handler nor CameraKit destroys it.
 - `ReactNativeBleHandler` owns native scans and BLE connections it creates.
-- CameraKit owns its discovery source and every camera session opened through
-  its discovery results.
+- CameraKit owns its discovery source and every camera session opened through its discovery results.
 - A camera session is fully connected when `connect()` resolves. Call
   `camera.close()` when finished; it is safe to call more than once.
-- `kit.close()` aborts active discoveries, closes sessions, and closes the BLE
-  handler. Call it before `manager.destroy()`.
-- An unexpected BLE disconnect moves the session to `disconnected`. Close that
-  session and reconnect through the original discovery result.
+- `kit.close()` aborts active discoveries, closes sessions, and closes the BLE handler. Call it before `manager.destroy()`.
+- An unexpected BLE disconnect moves the session to `disconnected`. Close that session and reconnect through the original discovery result.
 
 ## Native setup
 

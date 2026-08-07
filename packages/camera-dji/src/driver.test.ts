@@ -25,7 +25,7 @@ const packet = new BleAdvertisementPacket({
 });
 
 test("matches DJI advertisements without connecting", () => {
-  const driver = createDjiOsmoNanoDriver({ clock: { now: () => 0 } });
+  const driver = createDjiOsmoNanoDriver();
   expect(driver.matches(packet)).toBe(true);
   expect(
     driver.matches(
@@ -36,7 +36,7 @@ test("matches DJI advertisements without connecting", () => {
 
 test("disconnects when DJI session initialization fails", async () => {
   const device = new Device();
-  const driver = createDjiOsmoNanoDriver({ clock: { now: () => 0 } });
+  const driver = createDjiOsmoNanoDriver();
   await expect(driver.open(device, packet)).rejects.toThrow("characteristics");
   expect(device.disconnects).toBe(1);
 });

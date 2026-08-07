@@ -46,7 +46,7 @@ const SET_COLOR_COMMAND = 0x42;
 const STABILIZATION_PARAMETER_ID = 0x08;
 
 export type DjiOsmoNanoOptions = Readonly<{
-  clock: MonotonicClock;
+  clock?: MonotonicClock;
   commandTimeoutMs?: number;
   delay?: (milliseconds: number) => Promise<void>;
   modeSettleMs?: number;
@@ -171,8 +171,7 @@ export class DjiOsmoNanoHandle implements CameraHandle<
   private readonly collector = new DumlFragmentCollector();
   private lastFamily?: DjiOsmoNanoSettings["family"];
   private operationQueue: Promise<void> = Promise.resolve();
-  private readonly options: Pick<DjiOsmoNanoOptions, "clock"> &
-    Required<Omit<DjiOsmoNanoOptions, "clock">>;
+  private readonly options: Required<DjiOsmoNanoOptions>;
   private readonly pending = new Map<number, PendingRequest>();
   private phase?: DjiRecordingPhase;
   private phaseVersion = 0;
@@ -186,10 +185,13 @@ export class DjiOsmoNanoHandle implements CameraHandle<
   constructor(
     private readonly device: BleDevice,
     advertisement: BleAdvertisementPacket,
-    options: DjiOsmoNanoOptions,
+    options: DjiOsmoNanoOptions = {},
   ) {
     this.options = {
-      clock: options.clock,
+      clock: options.clock ?? {
+        now: () =>
+          typeof performance === "undefined" ? Date.now() : performance.now(),
+      },
       commandTimeoutMs: options.commandTimeoutMs ?? COMMAND_TIMEOUT,
       delay: options.delay ?? delay,
       modeSettleMs: options.modeSettleMs ?? MODE_SETTLE,

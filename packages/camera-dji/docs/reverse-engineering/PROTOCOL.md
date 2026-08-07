@@ -145,8 +145,9 @@ use `01` as an end-of-clip timestamp.
 
 `DjiOsmoNanoHandle.record()` first requires the matching status-`00` response to its
 `02/02 01` write, then resolves only at the first subsequently observed `81` FFF4
-status notification. Its `recordingActiveAt` result is sampled from the caller's
-injected monotonic clock at that notification. It must not resolve on the command
+status notification. Its `recordingActiveAt` result is sampled from the host's
+monotonic clock at that notification. Callers may inject their own clock when camera
+events need to share a timeline with other sensors. It must not resolve on the command
 acknowledgement or the earlier `41` transition. `stop()` analogously requires its
 status-`00` response and resolves at `c1`, rather than waiting for teardown `01`.
 

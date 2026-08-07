@@ -16,7 +16,7 @@ export type DjiOsmoNanoDriver = CameraDriver<
 >;
 
 export function createDjiOsmoNanoDriver(
-  options: DjiOsmoNanoOptions,
+  options: DjiOsmoNanoOptions = {},
 ): DjiOsmoNanoDriver {
   return {
     kind: "dji-osmo-nano",

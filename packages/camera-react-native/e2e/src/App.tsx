@@ -17,13 +17,9 @@ export default function App() {
   const [status, setStatus] = useState("Ready");
 
   const run = useCallback(async () => {
-    const clock = { now: () => Date.now() };
     const discovery = createBleCameraDiscovery({
       ble: new ReactNativeBleHandler(manager),
-      drivers: [
-        createDjiOsmoNanoDriver({ clock }),
-        createGoproHero11Driver({ clock }),
-      ] as const,
+      drivers: [createDjiOsmoNanoDriver(), createGoproHero11Driver()] as const,
     });
     const kit = createCameraKit(discovery);
     try {
