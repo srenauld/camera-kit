@@ -11,5 +11,6 @@ packages/*/dist
 **/dist
 skills-lock.json
 .agents
+**/*.tsbuildinfo
 packages/coverage
 **/.DS_Store
