@@ -6,10 +6,12 @@ const packages = path.dirname(fileURLToPath(import.meta.url));
 const jest = path.join(packages, "..", "node_modules", ".bin", "jest");
 const config = path.join(packages, "jest.combined.config.cjs");
 
-function runJest(selectProjects, { coverage = false, runInBand = false } = {}) {
+function runJest(selectProjects, { coverage = false, runInBand = false, detectOpenHandles = false } = {}) {
   const args = ["--config", config];
 
   if (runInBand) args.push("--runInBand");
+
+  if (detectOpenHandles) args.push("--detectOpenHandles");
 
   if (selectProjects.length > 0) {
     args.push("--selectProjects", ...selectProjects);
@@ -34,7 +36,11 @@ const unitProjects = [
 // Keep the coverage run separate from application-level suites. Integration and
 // E2E tests bootstrap the whole Nest application and otherwise retain their
 // instrumented module graph alongside all unit-test projects in one process.
-let result = runJest(unitProjects, { coverage: true });
+// The native BLE test doubles and coverage instrumentation can leave a Jest
+// worker waiting for the event loop to drain on CI runners. Running the
+// combined suite in-band keeps teardown deterministic without masking test
+// failures or using --forceExit.
+let result = runJest(unitProjects, { coverage: true, runInBand: true, detectOpenHandles: true });
 if (result.status !== 0) process.exit(result.status ?? 1);
 
 for (const project of ["integration", "e2e"]) {
