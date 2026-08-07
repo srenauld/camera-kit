@@ -1,7 +1,7 @@
 #!/bin/zsh
 set -euo pipefail
 ROOT="${0:A:h}"
-SDK="/Users/srenauld/Library/Android/sdk"
+SDK="~/Library/Android/sdk"
 TOOLS="$SDK/build-tools/36.1.0"
 OUT="$ROOT/out"
 KEYSTORE="$ROOT/.debug.keystore"

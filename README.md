@@ -49,7 +49,7 @@ for await (const discovered of kit.discover({ timeoutMs: 10_000 })) {
 }
 ```
 
-You can change the camera's modes with `setup()`, list its capabilities with `getCapabilities()`, enable preview (DJI only for now but I'll get it working on GoPro eventually)...
+You can change the camera's modes with `setup()`, list its capabilities with `getCapabilities()`, enable preview and stream video frames (soon)...
 
 An example is kept up to date in `camera-react-native` and `camera-macos`. They function as e2e tests.
 
