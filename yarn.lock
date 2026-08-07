@@ -2728,7 +2728,6 @@ __metadata:
   dependencies:
     "@eslint-react/eslint-plugin": "npm:^5.18.3"
     "@jest/globals": "npm:^30.2.0"
-    "@srenauld/camera-core": "workspace:*"
     "@types/jest": "npm:^30.0.0"
     eslint: "npm:^9.39.2"
     eslint-config-prettier: "npm:^10.1.8"
