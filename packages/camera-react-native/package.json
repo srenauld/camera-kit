@@ -28,7 +28,7 @@
     "testEnvironment": "node"
   },
   "peerDependencies": {
-    "@srenauld/camera-core": "0.1.0",
+    "@srenauld/camera-core": "*",
     "react-native": "*",
     "react-native-ble-plx": "^3.5.1"
   },
