@@ -3,7 +3,7 @@ import type {
   BleAdvertisementPacket,
   BleDevice,
   CameraDriver,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
 import { DjiOsmoNanoHandle, type DjiOsmoNanoOptions } from "./handle";
 

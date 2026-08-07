@@ -2,10 +2,12 @@
   "name": "workspace",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "test:all": "node ./packages/test-all.mjs"
+  },
   "workspaces": [
     "packages/*",
-    "packages/*/e2e",
-    "rnapp"
+    "packages/*/e2e"
   ],
   "devDependencies": {
     "@eslint/js": "^9.8.0",

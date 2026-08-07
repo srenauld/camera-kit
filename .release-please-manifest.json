@@ -1,0 +1,7 @@
+{
+  "packages/camera-core": "0.0.1",
+  "packages/camera-dji": "0.0.1",
+  "packages/camera-gopro": "0.0.1",
+  "packages/camera-macos": "0.0.1",
+  "packages/camera-react-native": "0.0.1"
+}

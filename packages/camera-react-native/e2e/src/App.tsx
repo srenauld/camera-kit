@@ -1,10 +1,10 @@
 import {
   createBleCameraDiscovery,
   createCameraKit,
-} from "@mandltv/camera-core";
-import { createDjiOsmoNanoDriver, DjiFrameRate } from "@mandltv/camera-dji";
-import { createGoproHero11Driver } from "@mandltv/camera-gopro";
-import { ReactNativeBleHandler } from "@mandltv/camera-react-native";
+} from "@srenauld/camera-core";
+import { createDjiOsmoNanoDriver, DjiFrameRate } from "@srenauld/camera-dji";
+import { createGoproHero11Driver } from "@srenauld/camera-gopro";
+import { ReactNativeBleHandler } from "@srenauld/camera-react-native";
 import { useCallback, useState } from "react";
 import { Button, PermissionsAndroid, Platform, Text, View } from "react-native";
 import { BleManager } from "react-native-ble-plx";

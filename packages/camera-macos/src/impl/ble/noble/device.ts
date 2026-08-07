@@ -1,5 +1,5 @@
 import { Peripheral } from "@abandonware/noble";
-import { type BleCharacteristic, type BleDevice } from "@mandltv/camera-core";
+import { type BleCharacteristic, type BleDevice } from "@srenauld/camera-core";
 
 import { NobleCharacteristic } from "./characteristic";
 

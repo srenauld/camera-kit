@@ -1,5 +1,5 @@
 {
-  "name": "@mandltv/camera-react-native-e2e",
+  "name": "@srenauld/camera-react-native-e2e",
   "private": true,
   "scripts": {
     "start": "node ./node_modules/react-native/cli.js start --entry-file index.tsx",
@@ -7,10 +7,10 @@
     "ios": "node ./node_modules/react-native/cli.js run-ios"
   },
   "dependencies": {
-    "@mandltv/camera-core": "workspace:*",
-    "@mandltv/camera-dji": "workspace:*",
-    "@mandltv/camera-gopro": "workspace:*",
-    "@mandltv/camera-react-native": "workspace:*",
+    "@srenauld/camera-core": "workspace:*",
+    "@srenauld/camera-dji": "workspace:*",
+    "@srenauld/camera-gopro": "workspace:*",
+    "@srenauld/camera-react-native": "workspace:*",
     "react": "19.2.6",
     "react-native": "0.86.0",
     "react-native-ble-plx": "^3.5.1",

@@ -1,6 +1,6 @@
 # React Native camera transport
 
-`@mandltv/camera-react-native` adapts an app-owned `BleManager` from
+`@srenauld/camera-react-native` adapts an app-owned `BleManager` from
 `react-native-ble-plx`. Camera protocols are injected separately so the
 platform transport does not decide which cameras an application supports.
 

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "release-type": "node",
+  "include-component-in-tag": true,
+  "separate-pull-requests": false,
+  "always-update": true,
+  "always-link-local": true,
+  "plugins": [
+    {
+      "type": "node-workspace",
+      "updatePeerDependencies": true
+    }
+  ],
+  "packages": {
+    "packages/camera-core": {
+      "release-type": "node"
+    },
+    "packages/camera-dji": {
+      "release-type": "node"
+    },
+    "packages/camera-gopro": {
+      "release-type": "node"
+    },
+    "packages/camera-macos": {
+      "release-type": "node"
+    },
+    "packages/camera-react-native": {
+      "release-type": "node"
+    }
+  }
+}

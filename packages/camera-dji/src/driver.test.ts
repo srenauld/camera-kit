@@ -2,7 +2,7 @@ import {
   BleAdvertisementPacket,
   type BleCharacteristic,
   type BleDevice,
-} from "@mandltv/camera-core";
+} from "@srenauld/camera-core";
 
 import { createDjiOsmoNanoDriver } from "./driver";
 

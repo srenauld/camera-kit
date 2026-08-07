@@ -1,6 +1,6 @@
 import type { Device, Subscription } from "react-native-ble-plx";
 
-import { type BleCharacteristic, type BleDevice } from "@mandltv/camera-core";
+import { type BleCharacteristic, type BleDevice } from "@srenauld/camera-core";
 
 import { ReactNativeBleCharacteristic } from "./ble-characteristic";
 

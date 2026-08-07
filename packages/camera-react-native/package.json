@@ -1,7 +1,7 @@
 {
-  "name": "@mandltv/camera-react-native",
+  "name": "@srenauld/camera-react-native",
   "version": "0.0.1",
-  "private": true,
+  "files": ["README.md", "LICENSE", "CHANGELOG.md", "package.json", "dist/**", "src/**", "tsconfig.json"],
   "main": "./dist/public/index.js",
   "types": "./dist/public/index.d.ts",
   "scripts": {
@@ -12,21 +12,20 @@
     "lint:type-check": "tsc",
     "lint": "yarn lint:rules && yarn lint:code-format && yarn lint:type-check",
     "lint:fix": "yarn lint:rules --fix && yarn lint:code-format --write && yarn lint:type-check",
-    "e2e:dji:android": "CAMERA_E2E_TARGET=dji yarn workspace @mandltv/camera-react-native-e2e android",
-    "e2e:dji:ios": "CAMERA_E2E_TARGET=dji yarn workspace @mandltv/camera-react-native-e2e ios"
+    "e2e:dji:android": "CAMERA_E2E_TARGET=dji yarn workspace @srenauld/camera-react-native-e2e android",
+    "e2e:dji:ios": "CAMERA_E2E_TARGET=dji yarn workspace @srenauld/camera-react-native-e2e ios"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
   "peerDependencies": {
+    "@srenauld/camera-core": "*",
     "react-native": "*",
     "react-native-ble-plx": "^3.5.1"
   },
-  "dependencies": {
-    "@mandltv/camera-core": "workspace:*"
-  },
   "devDependencies": {
+    "@srenauld/camera-core": "workspace:*",
     "@eslint-react/eslint-plugin": "^5.18.3",
     "@jest/globals": "^30.2.0",
     "@types/jest": "^30.0.0",

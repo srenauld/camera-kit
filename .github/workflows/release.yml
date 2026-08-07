@@ -1,0 +1,105 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: release-please-main
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Create or update release PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Release Please
+        id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target-branch: main
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+
+  publish:
+    name: Publish public package
+    needs: release
+    if: needs.release.outputs.releases_created == 'true'
+    runs-on: ubuntu-latest
+    environment: npm-publish
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Check out released commit
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Enable Yarn
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build workspaces
+        run: yarn workspaces foreach -A run build
+
+      - name: Publish camera-core
+        uses: JS-DevTools/npm-publish@v4
+        with:
+          package: packages/camera-core
+          access: public
+          strategy: all
+          ignore-scripts: true
+
+      - name: Publish camera-dji
+        uses: JS-DevTools/npm-publish@v4
+        with:
+          package: packages/camera-dji
+          access: public
+          strategy: all
+          ignore-scripts: true
+
+      - name: Publish camera-gopro
+        uses: JS-DevTools/npm-publish@v4
+        with:
+          package: packages/camera-gopro
+          access: public
+          strategy: all
+          ignore-scripts: true
+
+      - name: Publish camera-macos
+        uses: JS-DevTools/npm-publish@v4
+        with:
+          package: packages/camera-macos
+          access: public
+          strategy: all
+          ignore-scripts: true
+
+      - name: Publish camera-react-native
+        uses: JS-DevTools/npm-publish@v4
+        with:
+          package: packages/camera-react-native
+          access: public
+          strategy: all
+          ignore-scripts: true
