@@ -1,7 +1,15 @@
 {
   "name": "@srenauld/camera-react-native",
   "version": "0.0.1",
-  "files": ["README.md", "LICENSE", "CHANGELOG.md", "package.json", "dist/**", "src/**", "tsconfig.json"],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json",
+    "dist/**",
+    "src/**",
+    "tsconfig.json"
+  ],
   "main": "./dist/public/index.js",
   "types": "./dist/public/index.d.ts",
   "scripts": {
@@ -25,9 +33,9 @@
     "react-native-ble-plx": "^3.5.1"
   },
   "devDependencies": {
-    "@srenauld/camera-core": "workspace:*",
     "@eslint-react/eslint-plugin": "^5.18.3",
     "@jest/globals": "^30.2.0",
+    "@srenauld/camera-core": "workspace:*",
     "@types/jest": "^30.0.0",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",

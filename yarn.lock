@@ -2781,6 +2781,8 @@ __metadata:
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.38.0"
+  peerDependencies:
+    "@srenauld/camera-core": "*"
   languageName: unknown
   linkType: soft
 
@@ -2814,6 +2816,8 @@ __metadata:
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.38.0"
+  peerDependencies:
+    "@srenauld/camera-core": "*"
   languageName: unknown
   linkType: soft
 
@@ -2848,6 +2852,9 @@ __metadata:
     tsconfig-paths: "npm:^4.2.0"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.38.0"
+  peerDependencies:
+    "@abandonware/noble": ^1.9.2-26
+    "@srenauld/camera-core": "*"
   languageName: unknown
   linkType: soft
 
@@ -2901,6 +2908,7 @@ __metadata:
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.38.0"
   peerDependencies:
+    "@srenauld/camera-core": "*"
     react-native: "*"
     react-native-ble-plx: ^3.5.1
   languageName: unknown

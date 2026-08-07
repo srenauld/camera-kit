@@ -55,8 +55,8 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
-      - name: Enable Yarn
-        run: corepack enable
+      - name: Install Yarn
+        run: npm install --global yarn@4.15.0
 
       - name: Install dependencies
         run: yarn install --immutable

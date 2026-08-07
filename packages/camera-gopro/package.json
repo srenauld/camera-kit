@@ -1,7 +1,15 @@
 {
   "name": "@srenauld/camera-gopro",
   "version": "0.0.1",
-  "files": ["README.md", "LICENSE", "CHANGELOG.md", "package.json", "dist/**", "src/**", "tsconfig.json"],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json",
+    "dist/**",
+    "src/**",
+    "tsconfig.json"
+  ],
   "main": "./src/public/index.ts",
   "publishConfig": {
     "main": "./dist/public/index.js",
