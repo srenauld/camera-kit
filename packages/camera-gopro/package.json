@@ -1,6 +1,6 @@
 {
   "name": "@srenauld/camera-gopro",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "files": [
     "README.md",
     "LICENSE",
@@ -33,7 +33,7 @@
     ]
   },
   "peerDependencies": {
-    "@srenauld/camera-core": "*"
+    "@srenauld/camera-core": "0.1.0"
   },
   "devDependencies": {
     "@abandonware/noble": "^1.9.2-26",
