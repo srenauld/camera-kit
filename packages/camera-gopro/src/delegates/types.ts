@@ -1,5 +1,8 @@
 import type { Command } from "../commands/command";
-import type { CameraCapabilities, VideoCapability } from "@srenauld/camera-core";
+import type {
+  CameraCapabilities,
+  VideoCapability,
+} from "@srenauld/camera-core";
 
 export enum GoProFrameRate {
   FPS24 = 24,
